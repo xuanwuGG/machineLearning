@@ -25,11 +25,10 @@ train_data.insert(0, 'JokeId', first_column)
 test_data.insert(0, 'JokeId', first_column)
 # 将数据集转换为稀疏矩阵
 train_data_sparse = csr_matrix(train_data.values)
-print(train_data.shape)
-print(train_data_sparse.shape)
+print(train_data_sparse)
 
 # 计算笑话之间的余弦相似度
-# similarity_matrix = cosine_similarity(train_data_sparse.T)
+similarity_matrix = cosine_similarity(train_data_sparse.T)
 
 # # 遍历训练集中的每个样本
 # for i in range(train_data.shape[0]):
